@@ -21,6 +21,13 @@ public class SumandAverage {
     }
 
     public static int avgArray(int[] numArray){
-        return 0;
+        int i = 0;
+        int a = 0;
+        while (i< numArray.length){
+            a += numArray[i];
+            i++;
+        }
+        a = a/5;
+        return a;
     }
 }
