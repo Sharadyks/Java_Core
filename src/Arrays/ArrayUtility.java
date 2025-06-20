@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ArrayUtility {
     public static int[] inputArray() {
-        System.out.println("Welcome to array sum and average");
+
         Scanner input = new Scanner(System.in);
         System.out.print("Please enter the number of elements : ");
         int size = input.nextInt();
