@@ -1,7 +1,15 @@
 package Challenges.Abstraction_Interface;
 
 public class Square extends Shape{
-    private double side = 5.36;
+    private final double side;
+
+    public Square(double side){
+        this.side = side;
+    }
+
+    public double getSide() {
+        return side;
+    }
 
     @Override
     public void greetMe() {
@@ -10,13 +18,6 @@ public class Square extends Shape{
 
     @Override
     public double calculateArea() {
-        double circSquare = Math.pow(side,2);
-        return circSquare;
-    }
-
-    public static void main(String[] args) {
-        Square square1 = new Square();
-        square1.greetMe();
-        System.out.println(square1.calculateArea());
+        return Math.pow(side,2);
     }
 }
