@@ -1,4 +1,4 @@
-package Abstraction_and_more;
+package Abstraction_and_Polyphormism;
 
 public class TestAbstraction {
     public static void main(String[] args) {

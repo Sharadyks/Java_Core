@@ -1,4 +1,4 @@
-package Abstraction_and_more;
+package Abstraction_and_Polyphormism;
 
 public abstract class Vehicle implements Transport {
     private int noOfTyres;

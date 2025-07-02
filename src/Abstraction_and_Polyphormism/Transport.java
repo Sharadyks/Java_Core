@@ -1,4 +1,4 @@
-package Abstraction_and_more;
+package Abstraction_and_Polyphormism;
 
 public interface Transport {
      void getSetGo();
