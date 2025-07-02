@@ -2,6 +2,7 @@ package Abstraction_and_more;
 
 public class Car extends Vehicle {
 
+
     int noOfDoors;
     public Car() {
         super(4);
@@ -13,4 +14,8 @@ public class Car extends Vehicle {
         System.out.println("bruhhmm...");
     }
 
+    @Override
+    public void hello() {
+        System.out.println("Hello");
+    }
 }

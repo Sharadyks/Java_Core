@@ -8,12 +8,7 @@ public abstract class Vehicle implements Transport {
         this.noOfTyres = noOfTyres;
     }
 
-    Transport t = new Transport(){
-        @Override
-        public void getSetGo() {
-            System.out.println("Return to place....");
-        }
-    };
+
 
     public void getSetGo() {
         System.out.println("Going to place");
