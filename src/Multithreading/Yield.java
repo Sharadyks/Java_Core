@@ -1,7 +1,7 @@
 package Multithreading;
 
-public class YieldMethod extends Thread {
-    public YieldMethod(String name){
+public class Yield extends Thread {
+    public Yield(String name){
         super(name);
     }
     @Override
@@ -13,8 +13,8 @@ public class YieldMethod extends Thread {
     }
 
     public static void main(String[] args) throws Exception {
-        YieldMethod t1 = new YieldMethod("t1");
-        YieldMethod t2 = new YieldMethod("t2");
+        Yield t1 = new Yield("t1");
+        Yield t2 = new Yield("t2");
         t1.start();
         t2.start();
     }

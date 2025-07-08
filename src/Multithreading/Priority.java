@@ -1,7 +1,7 @@
 package Multithreading;
 
-public class Prioritymethod extends Thread {
-    public Prioritymethod(String name){
+public class Priority extends Thread {
+    public Priority(String name){
         super(name);
     }
     public void run(){
@@ -13,7 +13,7 @@ public class Prioritymethod extends Thread {
 
     }
     public static void main(String[] args) throws InterruptedException {
-        Prioritymethod t1 = new Prioritymethod("Sharad");
+        Priority t1 = new Priority("Sharad");
         t1.setPriority(Thread.MIN_PRIORITY);
         t1.start();
         t1.join();
