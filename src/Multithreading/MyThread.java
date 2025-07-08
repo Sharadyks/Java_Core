@@ -8,7 +8,7 @@ public class MyThread extends Thread {
             Thread.sleep(2000);
 
         } catch (InterruptedException e) {
-            System.out.println(e);
+            System.out.printf("Exception occured: %s",e);
         }
     }
 
