@@ -11,9 +11,12 @@ public class Test {
         try {
             t1.join();
             t2.join();
-            System.out.printf("%d %d",counter.getCount(),counter.getHello());
+//            System.out.printf("%d %d",counter.getCount(),counter.getHello());
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+        System.out.println(counter.getCount());
+        System.out.println(counter.getHello());
+
     }
 }
