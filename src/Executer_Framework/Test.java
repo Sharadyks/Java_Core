@@ -23,7 +23,9 @@ public class Test {
         List<Callable<Integer>> list = Arrays.asList(callable1, callable2, callable3);
 
         List<Future<Integer>> future = executorService.invokeAll(list);
-        future.get(callable1);
+        for (Future<Integer> f : future){
+            System.out.println(f.get());
+        }
         executorService.shutdown();
     }
 }
