@@ -2,6 +2,7 @@ package Executer_Framework;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 public class Second {
@@ -10,7 +11,7 @@ public class Second {
         ExecutorService executor = Executors.newFixedThreadPool(9);
         for (int i = 1; i < 10; i++) {
             int finalI = i;
-            executor.submit(() -> {
+            Future<?> future = executor.submit(() -> {
                 long result = fact(finalI);
                 System.out.println(result);
             });
