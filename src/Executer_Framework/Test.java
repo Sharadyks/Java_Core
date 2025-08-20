@@ -1,31 +1,27 @@
 package Executer_Framework;
 
-import java.util.Arrays;
-import java.util.List;
+
 import java.util.concurrent.*;
 
 public class Test {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(9);
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<Integer> future = executorService.submit(() -> {
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            return 42;
+        });
 
-        Callable<Integer> callable1 = ()->{
-            System.out.println("Task 1");
-            return 1;
-        };
-        Callable<Integer> callable2 = ()->{
-            System.out.println("Task 2");
-            return 2;
-        };
-        Callable<Integer> callable3 = ()->{
-            System.out.println("Task 3");
-            return 3;
-        };
-        List<Callable<Integer>> list = Arrays.asList(callable1, callable2, callable3);
-
-        List<Future<Integer>> future = executorService.invokeAll(list);
-        for (Future<Integer> f : future){
-            System.out.println(f.get());
+        Integer i;
+        try {
+            i = future.get(1,TimeUnit.SECONDS);
+            System.out.println(future.isDone());
+            System.out.println(i);
+        } catch (Exception e) {
+            System.out.println("Exception occurred: "+e);
         }
-        executorService.shutdown();
     }
 }
